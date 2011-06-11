@@ -6,7 +6,7 @@ namespace CIAPI
 {
     public static class CIAPI
     {
-        private const string markets = @"[{""MarketId"":400520618,""Name"":""US Crude Oil Aug 11 Spread""},{""MarketId"":400516270,""Name"":""GBP\/USD (per 0.0001) Dec 11 CFD""},{""MarketId"":400509815,""Name"":""UK 100 Aug 11 Spread""}]";
+        private const string markets = @"[{""MarketId"":400520618,""Name"":""US Crude Oil""},{""MarketId"":400516270,""Name"":""GBP\/USD""},{""MarketId"":400509815,""Name"":""UK 100""}]";
         
         public static Market[] GetMarkets()
         {

@@ -52,9 +52,28 @@ type ``about higher order functions``() =
            results of applying the given function to each of the 
            elements of the collection. *)        
         let marketSummaries = List.map getMarketNameSummary markets
-         
+        
         AssertEquality marketSummaries __
      (* map is very similar to iter, except that the a new collection
         of the results is returned *) 
+
+    [<Koan>]
+    member this.FilterCreatesNewCollectionContainingPredicateSatisfyingElements() =
+     
+        let markets = List.ofArray (CIAPI.GetMarkets())
+
+        let isMarketRising (market:Market) =
+            let lastPriceBar = CIAPI.GetPriceHistory(market.MarketId, 1).[0]
+            lastPriceBar.Close > lastPriceBar.Open
+
+        (* List.filter Returns a new collection containing only the elements 
+           of the collection for which the given predicate returns true. *)        
+        let risingMarkets = List.filter isMarketRising markets
+         
+        printfn "%A" risingMarkets
+
+        AssertEquality risingMarkets __
+
+       (* filter is really useful for, er, filtering :) *) 
 
 (* TODO -- further samples *)

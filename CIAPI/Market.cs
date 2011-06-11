@@ -13,7 +13,7 @@
 
         public override string ToString()
         {
-            return string.Format("MarketId={0},Name={1}", MarketId, Name);
+            return Name;
         }
     }
 }
