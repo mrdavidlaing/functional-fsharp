@@ -1,5 +1,6 @@
 ﻿namespace FSharpKoans
 open FSharpKoans.Core
+open CIAPI
 
 type ``about higher order functions``() =
 
@@ -12,16 +13,14 @@ type ``about higher order functions``() =
         (5) forall 
         (6) exists 
                 
-        because they apply a function to a list in a common way. *)
+        because they apply a function to a list in a common way. 
+        
+        Abstracting away the mechanics of an operation is one of the
+        ways that functinal programming promotes a declarative style.*)
 
         (* See http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
       
-    [<Koan>]
-    member this.IterAppliesTheFunctionToEachElement() =
-     
-        (* TODO *)
-        let result1 = __
-        AssertEquality result1 __
+    
         
     [<Koan>]
     member this.MapCreatesNewCollectionFromResultOfApplingTheFunctionToEachElement() =
