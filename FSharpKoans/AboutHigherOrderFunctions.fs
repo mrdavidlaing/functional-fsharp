@@ -41,10 +41,20 @@ type ``about higher order functions``() =
            we apply the function to the list of markets *)        
 
     [<Koan>]
-    member this.MapCreatesNewCollectionFromResultOfApplingTheFunctionToEachElement() =
+    member this.MapCreatesNewCollectionFromResultOfApplyingTheFunctionToEachElement() =
      
-        (* TODO *)
-        let result1 = __
-        AssertEquality result1 __
+        let markets = List.ofArray (CIAPI.GetMarkets())
+
+        let getMarketNameSummary (market:Market) =
+            market.Name.Substring(0, 3).Trim()
+
+        (* List.map Creates a new collection whose elements are the 
+           results of applying the given function to each of the 
+           elements of the collection. *)        
+        let marketSummaries = List.map getMarketNameSummary markets
+         
+        AssertEquality marketSummaries __
+     (* map is very similar to iter, except that the a new collection
+        of the results is returned *) 
 
 (* TODO -- further samples *)
