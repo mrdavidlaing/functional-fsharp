@@ -3,12 +3,7 @@ open FSharpKoans.Core
 open CIAPI
 
 type ``about asserts``() =
-    [<Koan>]
-    member this.IterAppliesTheFunctionToEachElement() =
-        let markets = List.ofArray (CIAPI.GetMarkets())
-        (* TODO *)
-        let result1 = __
-        AssertEquality markets __
+
 
 
     // We shall contemplate truth by testing reality, via asserts.
