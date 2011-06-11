@@ -68,6 +68,7 @@ type ``about first class functions``() =
             resultList  
 
         let result = (mapToEveryElement [1..5] square)
+        (* notice how we're passing in the square function as an argument *)
 
         //printfn "result = \n%A\n\n" result
         AssertEquality result __
@@ -75,8 +76,25 @@ type ``about first class functions``() =
     [<Koan>]
     member this.ReturningAFunctionFromAnotherFunction() =
         
-        (* TODO - see http://msdn.microsoft.com/en-us/library/dd233158.aspx for syntax *)
+        let powerFactory power = 
+            //printfn "Executing powerFactory %A\n" power 
+            let powerFunction number = 
+                let mutable result = 1
+                for i in [1..power] do
+                    result <- result * number
+                result
+            powerFunction
+        
+        //printfn "Creating squared\n"
+        let squared = powerFactory 2
+        let cubed = powerFactory 3
 
-        let result = __
+        //printfn "Using squared\n"
+        let result = squared 1 + squared 2 + cubed 3
 
         AssertEquality result __
+        
+        (* When is the powerFactory function executed? 
+           Once on creation of squared?
+           Every time we call a created function?
+         *)
