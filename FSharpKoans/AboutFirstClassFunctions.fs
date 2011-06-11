@@ -42,23 +42,20 @@ type ``about first class functions``() =
     member this.StoringFunctionsInADataStructure() =
         let add x y =
             x + y
+        
         let subtract x y =
             x - y
         
-        let operations = [add, subtract, add, subtract, subtract, add]
+        let operationsList = [add; subtract; add; subtract; subtract; add; add]
 
-        (* Hmm.  Now how do I apply each operation from the List? 
-          ala:
+        let mutable result = 0
 
-          for (i in operations) { 
-               result = operations[i](result,5); 
-               // log("result is now:", result); 
-            } 
-        *)
-        let result = __
+        for operation in operationsList do
+            result <- (operation result 5)
+            //printfn "result = %A" result            
 
         AssertEquality result __
- 
+
     [<Koan>]
     member this.PassingAFunctionToAnotherAsAnArgument() =
         
