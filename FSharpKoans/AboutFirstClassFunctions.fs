@@ -31,12 +31,10 @@ type ``about first class functions``() =
         let result1 = add 2 2
         let result2 = add 5 2
         
-        
         AssertEquality result1 __
         AssertEquality result2 __
         
        (* See how functions are given names just like other variables *)
-
 
     [<Koan>]
     member this.StoringFunctionsInADataStructure() =
@@ -55,14 +53,23 @@ type ``about first class functions``() =
             //printfn "result = %A" result            
 
         AssertEquality result __
-
+        (* And since they have names; we can store them in a list,
+            just like other variables *)
+    
     [<Koan>]
     member this.PassingAFunctionToAnotherAsAnArgument() =
         
-        (* TODO - see http://msdn.microsoft.com/en-us/library/dd233158.aspx for syntax *)
+        let square x = 
+            x * x
+        
+        let mapToEveryElement theList theFunction = 
+            let resultList = [ for item in theList do
+                                    yield theFunction item ]
+            resultList  
 
-        let result = __
+        let result = (mapToEveryElement [1..5] square)
 
+        //printfn "result = \n%A\n\n" result
         AssertEquality result __
 
     [<Koan>]
