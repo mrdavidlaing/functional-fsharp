@@ -118,4 +118,21 @@ type ``about higher order functions``() =
 
        (* Are all the elements in the collection checked? *) 
 
-(* TODO -- further samples *)
+    [<Koan>]
+    member this.ExistsChecksIfAnyElementMatches() =
+        (* List.forall Tests if any element of the list 
+           satisfies the given predicate. *) 
+        let marketId = 400520618
+        let priceBars = List.ofArray (CIAPI.GetPriceHistory(marketId, 35))
+
+        let openEqualsClose (current:PriceBar) =
+            //printfn "current.Open: %A current.Close %A" current.Open current.Close 
+            current.Open = current.Close
+
+        (* Are there any periods where the price effectively stayed the same?*)        
+        let flatPeriod = List.exists openEqualsClose priceBars
+
+        AssertEquality flatPeriod __
+
+       (* Are all the elements in the collection always checked?
+          What happens if you use an exists function that returns true? *) 
