@@ -3,9 +3,7 @@ open FSharpKoans.Core
 open CIAPI
 
 type ``about asserts``() =
-
-
-
+    
     // We shall contemplate truth by testing reality, via asserts.
 
     [<Koan>]
@@ -34,3 +32,13 @@ type ``about asserts``() =
     [<Koan>]
     member this.FillInValues() =
         AssertEquality (1 + 1) __
+
+    [<Koan>]
+    member this.AdvancingIsntTheOnlyGoal() =
+        (* Sometimes running the koan once will give you the answer *)
+        AssertEquality (216 / 4) __
+
+        (* Fill it in, but make sure you understand why its the answer.
+           Experiment a bit - remember, the objective is to learn
+           about the technique, not just get the koan answer *)
+
