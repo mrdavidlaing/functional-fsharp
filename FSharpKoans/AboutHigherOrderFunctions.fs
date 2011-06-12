@@ -100,6 +100,22 @@ type ``about higher order functions``() =
 
        (* reduce is a less generic version of a fold operation. *) 
    
+    [<Koan>]
+    member this.ForAllTestsAllElements() =
+        (* List.forall Tests if all elements of the collection satisfy 
+                       the given predicate. *)  
+        let marketId = 400520618
+        let priceBars = List.ofArray (CIAPI.GetPriceHistory(marketId, 35))
 
+        let isHigherThan198 (current:PriceBar) =
+            //printfn "current.Low: %A" current.Low 
+            current.Low > 198m
+
+        (* Imagine you had a stop order set at 198.  Would it be triggered?*)        
+        let triggersStop = List.forall isHigherThan198 priceBars
+
+        AssertEquality triggersStop __
+
+       (* Are all the elements in the collection checked? *) 
 
 (* TODO -- further samples *)
