@@ -63,10 +63,12 @@ namespace PriceHistoryGenerators
         {
             decimal minSinceMidnight = Convert.ToDecimal(secsSinceMidnight/60.0m);
             decimal hoursSinceMidnight = Convert.ToDecimal(minSinceMidnight/60.0m);
-            return Convert.ToDecimal(200 +
-                   (Math.Sin(secsSinceMidnight)
-                    + Math.Sin(Convert.ToDouble(minSinceMidnight)*10)
-                    + Math.Sin(Convert.ToDouble(hoursSinceMidnight) * 100)));
+            return Math.Round(
+                Convert.ToDecimal(200 +
+                                  (Math.Sin(secsSinceMidnight)
+                                   + Math.Sin(Convert.ToDouble(minSinceMidnight)*10)
+                                   + Math.Sin(Convert.ToDouble(hoursSinceMidnight)*100))),
+                4);
         }
 
         public long GetIntervalInSeconds(string interval)

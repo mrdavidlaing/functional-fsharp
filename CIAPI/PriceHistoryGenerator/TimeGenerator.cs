@@ -2,6 +2,14 @@
 
 namespace PriceHistoryGenerators
 {
+    public class Aug21TimeGenerator: TimeGenerator
+    {
+        public override DateTime GetNowUtc()
+        {
+            return new DateTime(2011, 8, 21);
+        }
+    }
+
     public class TimeGenerator
     {
         public virtual DateTime GetNowUtc()

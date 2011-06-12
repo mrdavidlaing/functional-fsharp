@@ -76,4 +76,30 @@ type ``about higher order functions``() =
 
        (* filter is really useful for, er, filtering :) *) 
 
+    [<Koan>]
+    member this.ReduceAppliesAFunctionToEachElementInTurnProducingASingleValue() =
+        let marketId = 400520618
+        let priceBars = List.ofArray (CIAPI.GetPriceHistory(marketId, 20))
+
+        let getHighest (previousHighest:PriceBar) (current:PriceBar) =
+            //printfn "previousHighest: %A current: %A" previousHighest.High current.High 
+            if current.High > previousHighest.High then
+                current
+            else
+                previousHighest
+
+        (* List.reduce iter­ates through each ele­ment of a list, 
+           build­ing up an accu­mu­la­tor value, which is the sum­mary of the 
+           pro­cess­ing done on the list so far. Once every list item has 
+           been processed, the final accu­mu­la­tor value is returned, 
+           the accumulator’s ini­tial value in List.reduce is the 
+           first ele­ment of the list. *)        
+        let highestPriceBar = List.reduce getHighest priceBars
+
+        AssertEquality highestPriceBar.High __
+
+       (* reduce is a less generic version of a fold operation. *) 
+   
+
+
 (* TODO -- further samples *)

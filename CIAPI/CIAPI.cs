@@ -15,7 +15,7 @@ namespace CIAPI
 
         public static PriceBar[] GetPriceHistory(int marketId, int numberOfBars)
         {
-            return new SinPriceHistoryGenerator()
+            return new SinPriceHistoryGenerator(new Aug21TimeGenerator())
                 .GeneratePrices(new HistoryRequest
                                    {
                                        Interval = "MINUTE", 

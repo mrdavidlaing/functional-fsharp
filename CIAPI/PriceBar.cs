@@ -22,5 +22,10 @@ namespace CIAPI
         public decimal High { get; set; }
         public decimal Low { get; set; }
         public decimal Close { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("PriceBar at {0}", BarDate);
+        }
     }
 }
