@@ -35,12 +35,9 @@ namespace PriceHistoryGenerators
 
         private PriceBar GeneratePriceBar(long startSecsSinceMidnight, long endSecsSinceMidnight)
         {
-            var priceBar = new PriceBar
-                               {
-                                   BarDate = _timeGenerator.GetDayStart().AddSeconds(startSecsSinceMidnight),
-                                   Open = GetMidPrice(startSecsSinceMidnight),
-                                   Low = Decimal.MaxValue
-                               };
+            var priceBar = new PriceBar(_timeGenerator.GetDayStart().AddSeconds(startSecsSinceMidnight),
+                                        GetMidPrice(startSecsSinceMidnight),
+                                        Decimal.MaxValue, 0, 0);
 
             for (long s = startSecsSinceMidnight; s < endSecsSinceMidnight; s += 10)
             {

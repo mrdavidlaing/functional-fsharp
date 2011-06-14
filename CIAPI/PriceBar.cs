@@ -6,7 +6,7 @@ namespace CIAPI
     {
         public PriceBar(DateTime barDate, decimal open, decimal high, decimal low, decimal close)
         {
-            BarDate = barDate;
+            BarDate = barDate.ToString("u");
             Open = open;
             High = high;
             Low = low;
@@ -17,7 +17,7 @@ namespace CIAPI
         {
         }
 
-        public DateTime BarDate { get; set; }
+        public string BarDate { get; set; }
         public decimal Open { get; set; }
         public decimal High { get; set; }
         public decimal Low { get; set; }

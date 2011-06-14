@@ -1,0 +1,30 @@
+﻿  /**********A word from our sponsors***************
+    Get paid to write opensource software
+        against the CityIndex Trading API
+               (see http://github.com/cityindex )
+  **************************************************/
+
+        * Visualizations?
+        * Trading prediction tools?
+        * Automated trading algorithms?
+
+
+                  |--tweet--|
+
+         contactme@davidlaing.com
+
+         |--------email---------|
+  
+
+  /************************************************
+                I need your help
+   ************************************************/
+
+     Please help me improve these koans:
+
+     Fork & submit patches with new koans,
+     concepts, corrections, ASCII art...
+
+     * https://github.com/mrdavidlaing/functional-javascript
+     * https://github.com/mrdavidlaing/functional-fsharp
+

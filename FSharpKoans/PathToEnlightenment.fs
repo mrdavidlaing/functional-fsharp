@@ -4,8 +4,9 @@ open FSharpKoans.Core
 let (containers: obj list) = [ ``about asserts``(); 
                                ``about first class functions``();
                                ``about higher order functions``();
-                               ``about continuations``();
-                               ``about how to apply what you've learned so far``();
+                               ``white marubozo``();
+                               ``fizzbuzz``();
+                               ``three white soliders``();
                                ]
 
 let runner = KoanRunner(containers)

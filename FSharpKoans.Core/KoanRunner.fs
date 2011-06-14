@@ -13,8 +13,8 @@ type KoanRunner(containers) =
     let combineUnlessFailed joinMessages state next =
         match state with
         | Success s -> combine joinMessages s next
-        | Failure _ -> state
-            
+        | Failure _ -> state     
+
     let executeContainer container =
         let name = container.GetType().Name.ToString()
         let lineOne = sprintf "When contemplating %s:" name

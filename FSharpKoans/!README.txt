@@ -8,8 +8,6 @@
       
        (2) Higher order functions and collections 
       
-       (3) Continuations 
-      
        by meditating on a series of koans 
       
 To begin, make sure FSharpKoans is set as the startup project

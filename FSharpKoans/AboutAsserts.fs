@@ -3,7 +3,7 @@ open FSharpKoans.Core
 open CIAPI
 
 type ``about asserts``() =
-    
+
     // We shall contemplate truth by testing reality, via asserts.
 
     [<Koan>]

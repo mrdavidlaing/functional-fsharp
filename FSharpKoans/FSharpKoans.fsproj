@@ -46,9 +46,12 @@
     <Compile Include="AboutAsserts.fs" />
     <Compile Include="AboutFirstClassFunctions.fs" />
     <Compile Include="AboutHigherOrderFunctions.fs" />
-    <Compile Include="AboutContinuations.fs" />
-    <Compile Include="AboutHowToApplyWhatYouLearnedSoFar.fs" />
+    <Content Include="STOP-Find-a-partner.txt" />
+    <Compile Include="WhiteMarubozo.fs" />
+    <Compile Include="FizzBuzz.fs" />
+    <Compile Include="ThreeWhiteSoldiers.fs" />
     <Compile Include="GoingForward.fs" />
+    <Content Include="THE_END.txt" />
     <Compile Include="OTHER-AboutBranching.fs" />
     <Compile Include="OTHER-AboutLet.fs" />
     <Compile Include="OTHER-AboutPipelining.fs" />

@@ -22,7 +22,6 @@ type ``about higher order functions``() =
       
     [<Koan>]
     member this.IterAppliesTheFunctionToEachElement() =
-
         (* CIAPI is a helper library that pulls data from 
            the CityIndex Ltd Trading API *)
         let markets = List.ofArray (CIAPI.GetMarkets())
@@ -35,7 +34,7 @@ type ``about higher order functions``() =
          
         AssertEquality markets.Length __
 
-        (* notice how we've capture a common pattern (foreach)
+        (* notice how we've captured a common pattern (foreach)
            into a single higher order statement.
            Instead of looping over the list and calling the function each time
            we apply the function to the list of markets *)        
@@ -57,6 +56,7 @@ type ``about higher order functions``() =
      (* map is very similar to iter, except that the a new collection
         of the results is returned *) 
 
+
     [<Koan>]
     member this.FilterCreatesNewCollectionContainingPredicateSatisfyingElements() =
      
@@ -70,7 +70,7 @@ type ``about higher order functions``() =
            of the collection for which the given predicate returns true. *)        
         let risingMarkets = List.filter isMarketRising markets
          
-        printfn "%A" risingMarkets
+        // printfn "%A" risingMarkets
 
         AssertEquality risingMarkets __
 
