@@ -1,0 +1,125 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Learning Advanced JavaScript</title>
+    <link href="lib/presentation.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./lib/recipes.css">
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/jquery.chili.js"></script>
+    <script src="./lib/recipes.js"></script>
+    <script src="lib/presentation.js"></script>
+    <script>
+        function assert(pass, msg) {
+            var type = pass ? "PASS" : "FAIL";
+            jQuery("#results").append("<li class='" + type + "'><b>" + type + "</b> " + msg + "</li>");
+        }
+        function error(msg) {
+            jQuery("#results").append("<li class='ERROR'><b>ERROR</b> " + msg + "</li>");
+        }
+        function log() {
+            var msg = "";
+            for (var i = 0; i < arguments.length; i++) {
+                msg += " " + arguments[i];
+            }
+            jQuery("#results").append("<li class='LOG'><b>LOG</b> " + msg + "</li>");
+        }
+    </script>
+</head>
+<body>
+
+<h3 class="">F# koans</h3>
+
+<div id="area">
+    <pre id="pre" class="javascript" style="height: 425px; ">
+    </pre>
+    <form id="form">
+        <div class="buttons" style="display: none; ">
+            <input type="submit" value="Run" class="run" id="run">
+            <input type="button" id="prev" value="« Prev">
+            <input type="button" id="next" value="Next »">
+        </div>
+        <div id="container">
+            <textarea id="code" wrap="off" style="height: 425px; "></textarea>
+            <ol id="results"></ol>
+            <p id="cite">Double-click the code to edit the tutorial and try your own code.
+                <br>Karma to <a href="http://ejohn.org/apps/learn/">John Resig for this tutorial framework</a></p>
+        </div>
+    </form>
+</div>
+
+<dl style="display: none; ">
+    <!-- Slide 1 -->
+    <dt>Our Goal</dt>
+    <dd></dd>
+
+    <!-- Slide 2 -->
+    <dt>Goal: To learn functional programming concepts in F#</dt>
+    <dd><pre>
+/*
+ *   Today we will expand our awareness of:
+ *
+ *   (1) First class functions
+ *
+ *   (2) Higher order functions and collections
+ *
+ *   by meditating on a series of koans
+
+    </pre></dd>
+
+    <!-- Slide 1 -->
+    <dt>To Visual Studio 2010!</dt>
+    <dd></dd>
+
+    <!-- Slide -->
+    <dt>To Visual Studio 2010!</dt>
+    <dd><pre>
+/*
+ *    Open
+ *
+ *
+ */
+    </pre></dd>
+
+ <!-- Slide -->
+    <dt>A word from our sponsors</dt>
+    <dd><pre>
+
+  /************************************************
+   Get paid to write opensource software
+        against the CityIndex Trading API
+               (see http://github.com/cityindex )
+  **************************************************/
+
+        * Visualizations?
+        * Trading prediction tools?
+        * Automated trading algorithms?
+
+
+                  |--tweet--|
+
+         contactme@davidlaing.com
+
+         |--------email---------|
+   </pre></dd>
+
+    <!-- Slide -->
+    <dt>Please fork and contribute</dt>
+    <dd><pre>
+
+     /****************************************
+                I need your help
+      ***************************************/
+
+     Please help me improve these koans:
+
+     Fork & submit patches with new koans,
+     concepts, corrections, ASCII art...
+
+     * https://github.com/mrdavidlaing/functional-javascript
+     * https://github.com/mrdavidlaing/functional-fsharp
+</pre></dd>
+
+</dl>
+
+</body>
+</html>
